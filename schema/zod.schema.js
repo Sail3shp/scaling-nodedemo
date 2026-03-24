@@ -5,3 +5,9 @@ export const payload = z.object({
             content: z.string().trim().max(1000).min(50)
         })
 })
+
+export const params = z.object({
+    params: z.object({
+        id: z.string()
+    })
+})
