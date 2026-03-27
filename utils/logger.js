@@ -12,7 +12,7 @@ if(!dir) dir = path.resolve('logs')
         fs.mkdirSync(dir)
     }
 
-const logLevel = process.env.NODE_ENV === 'development'? 'debug':'warn'
+const logLevel = process.env.NODE_ENV === 'development'? 'debug':'info'
 
 const dailyRotateFile = new DailyRotateFile({
     level: logLevel,

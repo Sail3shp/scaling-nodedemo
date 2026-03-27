@@ -2,6 +2,7 @@ import express from "express"
 import dotenv from 'dotenv'
 import postRouter from './routes/posts.routes.js'
 import { globalErrorHandler } from "./middleware/errorHandler.js"
+import logger from "./utils/logger.js"
 
 dotenv.config()
 const app = express()
@@ -14,6 +15,7 @@ app.use(globalErrorHandler)
 
 const server = app.listen(PORT,()=> {
     console.log(`server is running in port ${PORT}`)
+    //logger.info(`server is running on port ${PORT}`)
 })
 
 process.on('unhandledRejection',(err) => {
